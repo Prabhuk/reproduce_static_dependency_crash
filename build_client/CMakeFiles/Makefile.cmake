@@ -21,19 +21,16 @@ set(CMAKE_MAKEFILE_DEPENDS
   "/home/vagrant/cmake-3.7.2-Linux-x86_64/share/cmake-3.7/Modules/CMakeDetermineCompiler.cmake"
   "/home/vagrant/cmake-3.7.2-Linux-x86_64/share/cmake-3.7/Modules/CMakeDetermineCompilerABI.cmake"
   "/home/vagrant/cmake-3.7.2-Linux-x86_64/share/cmake-3.7/Modules/CMakeDetermineCompilerId.cmake"
-  "/home/vagrant/cmake-3.7.2-Linux-x86_64/share/cmake-3.7/Modules/CMakeDetermineSystem.cmake"
   "/home/vagrant/cmake-3.7.2-Linux-x86_64/share/cmake-3.7/Modules/CMakeFindBinUtils.cmake"
   "/home/vagrant/cmake-3.7.2-Linux-x86_64/share/cmake-3.7/Modules/CMakeGenericSystem.cmake"
   "/home/vagrant/cmake-3.7.2-Linux-x86_64/share/cmake-3.7/Modules/CMakeLanguageInformation.cmake"
   "/home/vagrant/cmake-3.7.2-Linux-x86_64/share/cmake-3.7/Modules/CMakeParseArguments.cmake"
   "/home/vagrant/cmake-3.7.2-Linux-x86_64/share/cmake-3.7/Modules/CMakeParseImplicitLinkInfo.cmake"
-  "/home/vagrant/cmake-3.7.2-Linux-x86_64/share/cmake-3.7/Modules/CMakeSystem.cmake.in"
   "/home/vagrant/cmake-3.7.2-Linux-x86_64/share/cmake-3.7/Modules/CMakeSystemSpecificInformation.cmake"
   "/home/vagrant/cmake-3.7.2-Linux-x86_64/share/cmake-3.7/Modules/CMakeSystemSpecificInitialize.cmake"
   "/home/vagrant/cmake-3.7.2-Linux-x86_64/share/cmake-3.7/Modules/CMakeTestCCompiler.cmake"
   "/home/vagrant/cmake-3.7.2-Linux-x86_64/share/cmake-3.7/Modules/CMakeTestCXXCompiler.cmake"
   "/home/vagrant/cmake-3.7.2-Linux-x86_64/share/cmake-3.7/Modules/CMakeTestCompilerCommon.cmake"
-  "/home/vagrant/cmake-3.7.2-Linux-x86_64/share/cmake-3.7/Modules/CMakeUnixFindMake.cmake"
   "/home/vagrant/cmake-3.7.2-Linux-x86_64/share/cmake-3.7/Modules/Compiler/ADSP-DetermineCompiler.cmake"
   "/home/vagrant/cmake-3.7.2-Linux-x86_64/share/cmake-3.7/Modules/Compiler/ARMCC-DetermineCompiler.cmake"
   "/home/vagrant/cmake-3.7.2-Linux-x86_64/share/cmake-3.7/Modules/Compiler/AppleClang-DetermineCompiler.cmake"
@@ -105,7 +102,6 @@ set(CMAKE_MAKEFILE_OUTPUTS
 
 # Byproducts of CMake generate step:
 set(CMAKE_MAKEFILE_PRODUCTS
-  "CMakeFiles/3.7.2/CMakeSystem.cmake"
   "CMakeFiles/3.7.2/CMakeCCompiler.cmake"
   "CMakeFiles/3.7.2/CMakeCXXCompiler.cmake"
   "CMakeFiles/3.7.2/CMakeCCompiler.cmake"

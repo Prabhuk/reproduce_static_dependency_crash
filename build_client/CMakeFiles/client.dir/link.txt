@@ -1,1 +1,1 @@
-/vagrant/llvm/build/bin/clang++      CMakeFiles/client.dir/main.cpp.o  -o client /home/vagrant/reproduce_static_dependency_crash/built_libs/lib/libunuseful.a 
+/vagrant/llvm/build/bin/clang++   -lstdc++ -fsanitize=vasan -fsanitize=vasancaller   CMakeFiles/client.dir/main.cpp.o  -o client /home/vagrant/reproduce_static_dependency_crash/built_libs/lib/libunuseful.a 
