@@ -1,0 +1,16 @@
+#IncludeRegexLine: ^[ 	]*#[ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+../include/Unuseful.h
+
+/Users/prabhu/CLionProjects/libstatic/src/Unuseful.cpp
+iostream
+-
+Unuseful.h
+/Users/prabhu/CLionProjects/libstatic/src/Unuseful.h
+
