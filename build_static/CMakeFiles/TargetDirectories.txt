@@ -1,0 +1,3 @@
+/home/vagrant/reproduce_static_dependency_crash/build_static/CMakeFiles/rebuild_cache.dir
+/home/vagrant/reproduce_static_dependency_crash/build_static/CMakeFiles/edit_cache.dir
+/home/vagrant/reproduce_static_dependency_crash/build_static/CMakeFiles/unuseful.dir

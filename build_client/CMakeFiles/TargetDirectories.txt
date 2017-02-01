@@ -1,0 +1,3 @@
+/home/vagrant/reproduce_static_dependency_crash/build_client/CMakeFiles/rebuild_cache.dir
+/home/vagrant/reproduce_static_dependency_crash/build_client/CMakeFiles/edit_cache.dir
+/home/vagrant/reproduce_static_dependency_crash/build_client/CMakeFiles/client.dir

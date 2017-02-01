@@ -1,0 +1,16 @@
+#IncludeRegexLine: ^[ 	]*#[ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+/home/vagrant/reproduce_static_dependency_crash/libstatic/include/Unuseful.h
+
+/home/vagrant/reproduce_static_dependency_crash/libstatic/src/Unuseful.cpp
+iostream
+-
+Unuseful.h
+/home/vagrant/reproduce_static_dependency_crash/libstatic/src/Unuseful.h
+
