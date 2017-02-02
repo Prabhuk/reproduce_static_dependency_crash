@@ -5,8 +5,8 @@
 #ifndef PROJECT_TESTVARIADIC_H
 #define PROJECT_TESTVARIADIC_H
 
-int sum_ints(int n, ...);
-int avg_doubles(int n, ...);
+int a_sum_ints(int n, ...);
+int a_avg_doubles(int n, ...);
 
 
 
