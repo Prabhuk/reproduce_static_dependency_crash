@@ -2,3 +2,6 @@
 /cmake-build-debug/
 /libstatic/cmake-build-debug/
 /client/cmake-build-debug/
+/build_client/
+/build_static/
+
