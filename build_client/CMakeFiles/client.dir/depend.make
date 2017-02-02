@@ -5,6 +5,5 @@ CMakeFiles/client.dir/TestVariadic.c.o: /home/vagrant/reproduce_static_dependenc
 CMakeFiles/client.dir/TestVariadic.c.o: /home/vagrant/reproduce_static_dependency_crash/client/TestVariadic.h
 
 CMakeFiles/client.dir/main.c.o: /home/vagrant/reproduce_static_dependency_crash/client/../libstatic/include/ExternalVariadic.h
-CMakeFiles/client.dir/main.c.o: /home/vagrant/reproduce_static_dependency_crash/client/TestVariadic.h
 CMakeFiles/client.dir/main.c.o: /home/vagrant/reproduce_static_dependency_crash/client/main.c
 

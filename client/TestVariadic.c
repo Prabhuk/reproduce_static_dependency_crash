@@ -6,7 +6,7 @@
 #include <stdarg.h>
 #include "TestVariadic.h"
 
-int a_sum_ints(int n, ...) {
+int ab_sum_ints(int n, ...) {
     printf("In func: sum_int\n");
     int sum = 0;
     va_list list;
@@ -20,7 +20,7 @@ int a_sum_ints(int n, ...) {
 }
 
 // calculates the average of n doubles
-int a_avg_doubles(int n, ...) {
+int ab_avg_doubles(int n, ...) {
     printf("In func: avg_doubles\n");
     double sum = 0;
     va_list list;

@@ -23,8 +23,6 @@ stdio.h
 -
 stdarg.h
 -
-TestVariadic.h
-/home/vagrant/reproduce_static_dependency_crash/client/TestVariadic.h
 ExternalVariadic.h
 /home/vagrant/reproduce_static_dependency_crash/client/ExternalVariadic.h
 
