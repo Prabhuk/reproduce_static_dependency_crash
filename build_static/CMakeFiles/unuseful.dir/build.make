@@ -57,41 +57,41 @@ include CMakeFiles/unuseful.dir/progress.make
 # Include the compile flags for this target's objects.
 include CMakeFiles/unuseful.dir/flags.make
 
-CMakeFiles/unuseful.dir/src/Unuseful.cpp.o: CMakeFiles/unuseful.dir/flags.make
-CMakeFiles/unuseful.dir/src/Unuseful.cpp.o: /home/vagrant/reproduce_static_dependency_crash/libstatic/src/Unuseful.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/vagrant/reproduce_static_dependency_crash/build_static/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building CXX object CMakeFiles/unuseful.dir/src/Unuseful.cpp.o"
-	clang++   $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/unuseful.dir/src/Unuseful.cpp.o -c /home/vagrant/reproduce_static_dependency_crash/libstatic/src/Unuseful.cpp
+CMakeFiles/unuseful.dir/src/ExternalVariadic.c.o: CMakeFiles/unuseful.dir/flags.make
+CMakeFiles/unuseful.dir/src/ExternalVariadic.c.o: /home/vagrant/reproduce_static_dependency_crash/libstatic/src/ExternalVariadic.c
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/vagrant/reproduce_static_dependency_crash/build_static/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building C object CMakeFiles/unuseful.dir/src/ExternalVariadic.c.o"
+	clang  $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/unuseful.dir/src/ExternalVariadic.c.o   -c /home/vagrant/reproduce_static_dependency_crash/libstatic/src/ExternalVariadic.c
 
-CMakeFiles/unuseful.dir/src/Unuseful.cpp.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/unuseful.dir/src/Unuseful.cpp.i"
-	clang++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/vagrant/reproduce_static_dependency_crash/libstatic/src/Unuseful.cpp > CMakeFiles/unuseful.dir/src/Unuseful.cpp.i
+CMakeFiles/unuseful.dir/src/ExternalVariadic.c.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/unuseful.dir/src/ExternalVariadic.c.i"
+	clang  $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /home/vagrant/reproduce_static_dependency_crash/libstatic/src/ExternalVariadic.c > CMakeFiles/unuseful.dir/src/ExternalVariadic.c.i
 
-CMakeFiles/unuseful.dir/src/Unuseful.cpp.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/unuseful.dir/src/Unuseful.cpp.s"
-	clang++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/vagrant/reproduce_static_dependency_crash/libstatic/src/Unuseful.cpp -o CMakeFiles/unuseful.dir/src/Unuseful.cpp.s
+CMakeFiles/unuseful.dir/src/ExternalVariadic.c.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/unuseful.dir/src/ExternalVariadic.c.s"
+	clang  $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/vagrant/reproduce_static_dependency_crash/libstatic/src/ExternalVariadic.c -o CMakeFiles/unuseful.dir/src/ExternalVariadic.c.s
 
-CMakeFiles/unuseful.dir/src/Unuseful.cpp.o.requires:
+CMakeFiles/unuseful.dir/src/ExternalVariadic.c.o.requires:
 
-.PHONY : CMakeFiles/unuseful.dir/src/Unuseful.cpp.o.requires
+.PHONY : CMakeFiles/unuseful.dir/src/ExternalVariadic.c.o.requires
 
-CMakeFiles/unuseful.dir/src/Unuseful.cpp.o.provides: CMakeFiles/unuseful.dir/src/Unuseful.cpp.o.requires
-	$(MAKE) -f CMakeFiles/unuseful.dir/build.make CMakeFiles/unuseful.dir/src/Unuseful.cpp.o.provides.build
-.PHONY : CMakeFiles/unuseful.dir/src/Unuseful.cpp.o.provides
+CMakeFiles/unuseful.dir/src/ExternalVariadic.c.o.provides: CMakeFiles/unuseful.dir/src/ExternalVariadic.c.o.requires
+	$(MAKE) -f CMakeFiles/unuseful.dir/build.make CMakeFiles/unuseful.dir/src/ExternalVariadic.c.o.provides.build
+.PHONY : CMakeFiles/unuseful.dir/src/ExternalVariadic.c.o.provides
 
-CMakeFiles/unuseful.dir/src/Unuseful.cpp.o.provides.build: CMakeFiles/unuseful.dir/src/Unuseful.cpp.o
+CMakeFiles/unuseful.dir/src/ExternalVariadic.c.o.provides.build: CMakeFiles/unuseful.dir/src/ExternalVariadic.c.o
 
 
 # Object files for target unuseful
 unuseful_OBJECTS = \
-"CMakeFiles/unuseful.dir/src/Unuseful.cpp.o"
+"CMakeFiles/unuseful.dir/src/ExternalVariadic.c.o"
 
 # External object files for target unuseful
 unuseful_EXTERNAL_OBJECTS =
 
-libunuseful.a: CMakeFiles/unuseful.dir/src/Unuseful.cpp.o
+libunuseful.a: CMakeFiles/unuseful.dir/src/ExternalVariadic.c.o
 libunuseful.a: CMakeFiles/unuseful.dir/build.make
 libunuseful.a: CMakeFiles/unuseful.dir/link.txt
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/home/vagrant/reproduce_static_dependency_crash/build_static/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Linking CXX static library libunuseful.a"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/home/vagrant/reproduce_static_dependency_crash/build_static/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Linking C static library libunuseful.a"
 	$(CMAKE_COMMAND) -P CMakeFiles/unuseful.dir/cmake_clean_target.cmake
 	$(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/unuseful.dir/link.txt --verbose=$(VERBOSE)
 
@@ -100,7 +100,7 @@ CMakeFiles/unuseful.dir/build: libunuseful.a
 
 .PHONY : CMakeFiles/unuseful.dir/build
 
-CMakeFiles/unuseful.dir/requires: CMakeFiles/unuseful.dir/src/Unuseful.cpp.o.requires
+CMakeFiles/unuseful.dir/requires: CMakeFiles/unuseful.dir/src/ExternalVariadic.c.o.requires
 
 .PHONY : CMakeFiles/unuseful.dir/requires
 

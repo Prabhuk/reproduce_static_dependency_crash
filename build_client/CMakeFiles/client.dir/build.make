@@ -57,42 +57,68 @@ include CMakeFiles/client.dir/progress.make
 # Include the compile flags for this target's objects.
 include CMakeFiles/client.dir/flags.make
 
-CMakeFiles/client.dir/main.cpp.o: CMakeFiles/client.dir/flags.make
-CMakeFiles/client.dir/main.cpp.o: /home/vagrant/reproduce_static_dependency_crash/client/main.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/vagrant/reproduce_static_dependency_crash/build_client/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building CXX object CMakeFiles/client.dir/main.cpp.o"
-	/vagrant/llvm/build/bin/clang++   $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/client.dir/main.cpp.o -c /home/vagrant/reproduce_static_dependency_crash/client/main.cpp
+CMakeFiles/client.dir/main.c.o: CMakeFiles/client.dir/flags.make
+CMakeFiles/client.dir/main.c.o: /home/vagrant/reproduce_static_dependency_crash/client/main.c
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/vagrant/reproduce_static_dependency_crash/build_client/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building C object CMakeFiles/client.dir/main.c.o"
+	/vagrant/llvm/build/bin/clang  $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/client.dir/main.c.o   -c /home/vagrant/reproduce_static_dependency_crash/client/main.c
 
-CMakeFiles/client.dir/main.cpp.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/client.dir/main.cpp.i"
-	/vagrant/llvm/build/bin/clang++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/vagrant/reproduce_static_dependency_crash/client/main.cpp > CMakeFiles/client.dir/main.cpp.i
+CMakeFiles/client.dir/main.c.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/client.dir/main.c.i"
+	/vagrant/llvm/build/bin/clang  $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /home/vagrant/reproduce_static_dependency_crash/client/main.c > CMakeFiles/client.dir/main.c.i
 
-CMakeFiles/client.dir/main.cpp.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/client.dir/main.cpp.s"
-	/vagrant/llvm/build/bin/clang++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/vagrant/reproduce_static_dependency_crash/client/main.cpp -o CMakeFiles/client.dir/main.cpp.s
+CMakeFiles/client.dir/main.c.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/client.dir/main.c.s"
+	/vagrant/llvm/build/bin/clang  $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/vagrant/reproduce_static_dependency_crash/client/main.c -o CMakeFiles/client.dir/main.c.s
 
-CMakeFiles/client.dir/main.cpp.o.requires:
+CMakeFiles/client.dir/main.c.o.requires:
 
-.PHONY : CMakeFiles/client.dir/main.cpp.o.requires
+.PHONY : CMakeFiles/client.dir/main.c.o.requires
 
-CMakeFiles/client.dir/main.cpp.o.provides: CMakeFiles/client.dir/main.cpp.o.requires
-	$(MAKE) -f CMakeFiles/client.dir/build.make CMakeFiles/client.dir/main.cpp.o.provides.build
-.PHONY : CMakeFiles/client.dir/main.cpp.o.provides
+CMakeFiles/client.dir/main.c.o.provides: CMakeFiles/client.dir/main.c.o.requires
+	$(MAKE) -f CMakeFiles/client.dir/build.make CMakeFiles/client.dir/main.c.o.provides.build
+.PHONY : CMakeFiles/client.dir/main.c.o.provides
 
-CMakeFiles/client.dir/main.cpp.o.provides.build: CMakeFiles/client.dir/main.cpp.o
+CMakeFiles/client.dir/main.c.o.provides.build: CMakeFiles/client.dir/main.c.o
+
+
+CMakeFiles/client.dir/TestVariadic.c.o: CMakeFiles/client.dir/flags.make
+CMakeFiles/client.dir/TestVariadic.c.o: /home/vagrant/reproduce_static_dependency_crash/client/TestVariadic.c
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/vagrant/reproduce_static_dependency_crash/build_client/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Building C object CMakeFiles/client.dir/TestVariadic.c.o"
+	/vagrant/llvm/build/bin/clang  $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/client.dir/TestVariadic.c.o   -c /home/vagrant/reproduce_static_dependency_crash/client/TestVariadic.c
+
+CMakeFiles/client.dir/TestVariadic.c.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/client.dir/TestVariadic.c.i"
+	/vagrant/llvm/build/bin/clang  $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /home/vagrant/reproduce_static_dependency_crash/client/TestVariadic.c > CMakeFiles/client.dir/TestVariadic.c.i
+
+CMakeFiles/client.dir/TestVariadic.c.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/client.dir/TestVariadic.c.s"
+	/vagrant/llvm/build/bin/clang  $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/vagrant/reproduce_static_dependency_crash/client/TestVariadic.c -o CMakeFiles/client.dir/TestVariadic.c.s
+
+CMakeFiles/client.dir/TestVariadic.c.o.requires:
+
+.PHONY : CMakeFiles/client.dir/TestVariadic.c.o.requires
+
+CMakeFiles/client.dir/TestVariadic.c.o.provides: CMakeFiles/client.dir/TestVariadic.c.o.requires
+	$(MAKE) -f CMakeFiles/client.dir/build.make CMakeFiles/client.dir/TestVariadic.c.o.provides.build
+.PHONY : CMakeFiles/client.dir/TestVariadic.c.o.provides
+
+CMakeFiles/client.dir/TestVariadic.c.o.provides.build: CMakeFiles/client.dir/TestVariadic.c.o
 
 
 # Object files for target client
 client_OBJECTS = \
-"CMakeFiles/client.dir/main.cpp.o"
+"CMakeFiles/client.dir/main.c.o" \
+"CMakeFiles/client.dir/TestVariadic.c.o"
 
 # External object files for target client
 client_EXTERNAL_OBJECTS =
 
-client: CMakeFiles/client.dir/main.cpp.o
+client: CMakeFiles/client.dir/main.c.o
+client: CMakeFiles/client.dir/TestVariadic.c.o
 client: CMakeFiles/client.dir/build.make
-client: /home/vagrant/reproduce_static_dependency_crash/built_libs/lib/libunuseful.a
+client: /home/vagrant/reproduce_static_dependency_crash/build_static/libunuseful.a
 client: CMakeFiles/client.dir/link.txt
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/home/vagrant/reproduce_static_dependency_crash/build_client/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Linking CXX executable client"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/home/vagrant/reproduce_static_dependency_crash/build_client/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Linking C executable client"
 	$(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/client.dir/link.txt --verbose=$(VERBOSE)
 
 # Rule to build all files generated by this target.
@@ -100,7 +126,8 @@ CMakeFiles/client.dir/build: client
 
 .PHONY : CMakeFiles/client.dir/build
 
-CMakeFiles/client.dir/requires: CMakeFiles/client.dir/main.cpp.o.requires
+CMakeFiles/client.dir/requires: CMakeFiles/client.dir/main.c.o.requires
+CMakeFiles/client.dir/requires: CMakeFiles/client.dir/TestVariadic.c.o.requires
 
 .PHONY : CMakeFiles/client.dir/requires
 

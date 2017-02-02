@@ -1,7 +1,7 @@
 The system is: Linux - 3.13.0-107-generic - x86_64
 Compiling the C compiler identification source file "CMakeCCompilerId.c" succeeded.
 Compiler: /vagrant/llvm/build/bin/clang 
-Build flags: 
+Build flags: -lstdc++;-fsanitize=vasan;-fsanitize=vasancaller
 Id flags: 
 
 The output was:
@@ -14,7 +14,7 @@ The C compiler identification is Clang, found in "/home/vagrant/reproduce_static
 
 Compiling the CXX compiler identification source file "CMakeCXXCompilerId.cpp" succeeded.
 Compiler: /vagrant/llvm/build/bin/clang++ 
-Build flags: 
+Build flags: -lstdc++;-fsanitize=vasan;-fsanitize=vasancaller
 Id flags: 
 
 The output was:
@@ -28,28 +28,30 @@ The CXX compiler identification is Clang, found in "/home/vagrant/reproduce_stat
 Determining if the C compiler works passed with the following output:
 Change Dir: /home/vagrant/reproduce_static_dependency_crash/build_static/CMakeFiles/CMakeTmp
 
-Run Build Command:"/usr/bin/make" "cmTC_8ca87/fast"
-/usr/bin/make -f CMakeFiles/cmTC_8ca87.dir/build.make CMakeFiles/cmTC_8ca87.dir/build
+Run Build Command:"/usr/bin/make" "cmTC_e39b5/fast"
+/usr/bin/make -f CMakeFiles/cmTC_e39b5.dir/build.make CMakeFiles/cmTC_e39b5.dir/build
 make[1]: Entering directory `/home/vagrant/reproduce_static_dependency_crash/build_static/CMakeFiles/CMakeTmp'
-Building C object CMakeFiles/cmTC_8ca87.dir/testCCompiler.c.o
-/vagrant/llvm/build/bin/clang     -o CMakeFiles/cmTC_8ca87.dir/testCCompiler.c.o   -c /home/vagrant/reproduce_static_dependency_crash/build_static/CMakeFiles/CMakeTmp/testCCompiler.c
-Linking C executable cmTC_8ca87
-/home/vagrant/cmake-3.7.2-Linux-x86_64/bin/cmake -E cmake_link_script CMakeFiles/cmTC_8ca87.dir/link.txt --verbose=1
-/vagrant/llvm/build/bin/clang       CMakeFiles/cmTC_8ca87.dir/testCCompiler.c.o  -o cmTC_8ca87 
+Building C object CMakeFiles/cmTC_e39b5.dir/testCCompiler.c.o
+/vagrant/llvm/build/bin/clang    -lstdc++ -fsanitize=vasan -fsanitize=vasancaller    -o CMakeFiles/cmTC_e39b5.dir/testCCompiler.c.o   -c /home/vagrant/reproduce_static_dependency_crash/build_static/CMakeFiles/CMakeTmp/testCCompiler.c
+clang: warning: -Z-reserved-lib-stdc++: 'linker' input unused
+Linking C executable cmTC_e39b5
+/home/vagrant/cmake-3.7.2-Linux-x86_64/bin/cmake -E cmake_link_script CMakeFiles/cmTC_e39b5.dir/link.txt --verbose=1
+/vagrant/llvm/build/bin/clang  -lstdc++ -fsanitize=vasan -fsanitize=vasancaller     CMakeFiles/cmTC_e39b5.dir/testCCompiler.c.o  -o cmTC_e39b5 
 make[1]: Leaving directory `/home/vagrant/reproduce_static_dependency_crash/build_static/CMakeFiles/CMakeTmp'
 
 
 Detecting C compiler ABI info compiled with the following output:
 Change Dir: /home/vagrant/reproduce_static_dependency_crash/build_static/CMakeFiles/CMakeTmp
 
-Run Build Command:"/usr/bin/make" "cmTC_2a545/fast"
-/usr/bin/make -f CMakeFiles/cmTC_2a545.dir/build.make CMakeFiles/cmTC_2a545.dir/build
+Run Build Command:"/usr/bin/make" "cmTC_d0c0c/fast"
+/usr/bin/make -f CMakeFiles/cmTC_d0c0c.dir/build.make CMakeFiles/cmTC_d0c0c.dir/build
 make[1]: Entering directory `/home/vagrant/reproduce_static_dependency_crash/build_static/CMakeFiles/CMakeTmp'
-Building C object CMakeFiles/cmTC_2a545.dir/CMakeCCompilerABI.c.o
-/vagrant/llvm/build/bin/clang     -o CMakeFiles/cmTC_2a545.dir/CMakeCCompilerABI.c.o   -c /home/vagrant/cmake-3.7.2-Linux-x86_64/share/cmake-3.7/Modules/CMakeCCompilerABI.c
-Linking C executable cmTC_2a545
-/home/vagrant/cmake-3.7.2-Linux-x86_64/bin/cmake -E cmake_link_script CMakeFiles/cmTC_2a545.dir/link.txt --verbose=1
-/vagrant/llvm/build/bin/clang      -v CMakeFiles/cmTC_2a545.dir/CMakeCCompilerABI.c.o  -o cmTC_2a545  
+Building C object CMakeFiles/cmTC_d0c0c.dir/CMakeCCompilerABI.c.o
+/vagrant/llvm/build/bin/clang    -lstdc++ -fsanitize=vasan -fsanitize=vasancaller    -o CMakeFiles/cmTC_d0c0c.dir/CMakeCCompilerABI.c.o   -c /home/vagrant/cmake-3.7.2-Linux-x86_64/share/cmake-3.7/Modules/CMakeCCompilerABI.c
+clang: warning: -Z-reserved-lib-stdc++: 'linker' input unused
+Linking C executable cmTC_d0c0c
+/home/vagrant/cmake-3.7.2-Linux-x86_64/bin/cmake -E cmake_link_script CMakeFiles/cmTC_d0c0c.dir/link.txt --verbose=1
+/vagrant/llvm/build/bin/clang  -lstdc++ -fsanitize=vasan -fsanitize=vasancaller    -v CMakeFiles/cmTC_d0c0c.dir/CMakeCCompilerABI.c.o  -o cmTC_d0c0c  
 clang version 3.9.1 
 Target: x86_64-unknown-linux-gnu
 Thread model: posix
@@ -63,7 +65,7 @@ Candidate multilib: .;@m64
 Candidate multilib: 32;@m32
 Candidate multilib: x32;@mx32
 Selected multilib: .;@m64
- "/usr/bin/ld" -z relro --hash-style=gnu --eh-frame-hdr -m elf_x86_64 -dynamic-linker /lib64/ld-linux-x86-64.so.2 -o cmTC_2a545 /usr/lib/gcc/x86_64-linux-gnu/4.8/../../../x86_64-linux-gnu/crt1.o /usr/lib/gcc/x86_64-linux-gnu/4.8/../../../x86_64-linux-gnu/crti.o /usr/lib/gcc/x86_64-linux-gnu/4.8/crtbegin.o -L/usr/lib/gcc/x86_64-linux-gnu/4.8 -L/usr/lib/gcc/x86_64-linux-gnu/4.8/../../../x86_64-linux-gnu -L/lib/x86_64-linux-gnu -L/lib/../lib64 -L/usr/lib/x86_64-linux-gnu -L/usr/lib/gcc/x86_64-linux-gnu/4.8/../../.. -L/vagrant/llvm/build/bin/../lib -L/lib -L/usr/lib CMakeFiles/cmTC_2a545.dir/CMakeCCompilerABI.c.o -lgcc --as-needed -lgcc_s --no-as-needed -lc -lgcc --as-needed -lgcc_s --no-as-needed /usr/lib/gcc/x86_64-linux-gnu/4.8/crtend.o /usr/lib/gcc/x86_64-linux-gnu/4.8/../../../x86_64-linux-gnu/crtn.o
+ "/usr/bin/ld" -z relro --hash-style=gnu --eh-frame-hdr -m elf_x86_64 -dynamic-linker /lib64/ld-linux-x86-64.so.2 -o cmTC_d0c0c /usr/lib/gcc/x86_64-linux-gnu/4.8/../../../x86_64-linux-gnu/crt1.o /usr/lib/gcc/x86_64-linux-gnu/4.8/../../../x86_64-linux-gnu/crti.o /usr/lib/gcc/x86_64-linux-gnu/4.8/crtbegin.o -L/usr/lib/gcc/x86_64-linux-gnu/4.8 -L/usr/lib/gcc/x86_64-linux-gnu/4.8/../../../x86_64-linux-gnu -L/lib/x86_64-linux-gnu -L/lib/../lib64 -L/usr/lib/x86_64-linux-gnu -L/usr/lib/gcc/x86_64-linux-gnu/4.8/../../.. -L/vagrant/llvm/build/bin/../lib -L/lib -L/usr/lib -whole-archive /vagrant/llvm/build/bin/../lib/clang/3.9.1/lib/linux/libclang_rt.ubsan_standalone-x86_64.a -no-whole-archive --dynamic-list=/vagrant/llvm/build/bin/../lib/clang/3.9.1/lib/linux/libclang_rt.ubsan_standalone-x86_64.a.syms -whole-archive /vagrant/llvm/build/bin/../lib/clang/3.9.1/lib/linux/libclang_rt.vasan-x86_64.a -no-whole-archive -whole-archive /vagrant/llvm/build/bin/../lib/clang/3.9.1/lib/linux/libclang_rt.vasancaller-x86_64.a -no-whole-archive -export-dynamic -lstdc++ CMakeFiles/cmTC_d0c0c.dir/CMakeCCompilerABI.c.o --no-as-needed -lpthread -lrt -lm -ldl -lgcc --as-needed -lgcc_s --no-as-needed -lc -lgcc --as-needed -lgcc_s --no-as-needed /usr/lib/gcc/x86_64-linux-gnu/4.8/crtend.o /usr/lib/gcc/x86_64-linux-gnu/4.8/../../../x86_64-linux-gnu/crtn.o
 make[1]: Leaving directory `/home/vagrant/reproduce_static_dependency_crash/build_static/CMakeFiles/CMakeTmp'
 
 
@@ -71,14 +73,15 @@ Parsed C implicit link information from above output:
   link line regex: [^( *|.*[/\])(ld|([^/\]+-)?ld|collect2)[^/\]*( |$)]
   ignore line: [Change Dir: /home/vagrant/reproduce_static_dependency_crash/build_static/CMakeFiles/CMakeTmp]
   ignore line: []
-  ignore line: [Run Build Command:"/usr/bin/make" "cmTC_2a545/fast"]
-  ignore line: [/usr/bin/make -f CMakeFiles/cmTC_2a545.dir/build.make CMakeFiles/cmTC_2a545.dir/build]
+  ignore line: [Run Build Command:"/usr/bin/make" "cmTC_d0c0c/fast"]
+  ignore line: [/usr/bin/make -f CMakeFiles/cmTC_d0c0c.dir/build.make CMakeFiles/cmTC_d0c0c.dir/build]
   ignore line: [make[1]: Entering directory `/home/vagrant/reproduce_static_dependency_crash/build_static/CMakeFiles/CMakeTmp']
-  ignore line: [Building C object CMakeFiles/cmTC_2a545.dir/CMakeCCompilerABI.c.o]
-  ignore line: [/vagrant/llvm/build/bin/clang     -o CMakeFiles/cmTC_2a545.dir/CMakeCCompilerABI.c.o   -c /home/vagrant/cmake-3.7.2-Linux-x86_64/share/cmake-3.7/Modules/CMakeCCompilerABI.c]
-  ignore line: [Linking C executable cmTC_2a545]
-  ignore line: [/home/vagrant/cmake-3.7.2-Linux-x86_64/bin/cmake -E cmake_link_script CMakeFiles/cmTC_2a545.dir/link.txt --verbose=1]
-  ignore line: [/vagrant/llvm/build/bin/clang      -v CMakeFiles/cmTC_2a545.dir/CMakeCCompilerABI.c.o  -o cmTC_2a545  ]
+  ignore line: [Building C object CMakeFiles/cmTC_d0c0c.dir/CMakeCCompilerABI.c.o]
+  ignore line: [/vagrant/llvm/build/bin/clang    -lstdc++ -fsanitize=vasan -fsanitize=vasancaller    -o CMakeFiles/cmTC_d0c0c.dir/CMakeCCompilerABI.c.o   -c /home/vagrant/cmake-3.7.2-Linux-x86_64/share/cmake-3.7/Modules/CMakeCCompilerABI.c]
+  ignore line: [clang: warning: -Z-reserved-lib-stdc++: 'linker' input unused]
+  ignore line: [Linking C executable cmTC_d0c0c]
+  ignore line: [/home/vagrant/cmake-3.7.2-Linux-x86_64/bin/cmake -E cmake_link_script CMakeFiles/cmTC_d0c0c.dir/link.txt --verbose=1]
+  ignore line: [/vagrant/llvm/build/bin/clang  -lstdc++ -fsanitize=vasan -fsanitize=vasancaller    -v CMakeFiles/cmTC_d0c0c.dir/CMakeCCompilerABI.c.o  -o cmTC_d0c0c  ]
   ignore line: [clang version 3.9.1 ]
   ignore line: [Target: x86_64-unknown-linux-gnu]
   ignore line: [Thread model: posix]
@@ -96,7 +99,7 @@ Parsed C implicit link information from above output:
   ignore line: [@mx32]
   ignore line: [Selected multilib: .]
   ignore line: [@m64]
-  link line: [ "/usr/bin/ld" -z relro --hash-style=gnu --eh-frame-hdr -m elf_x86_64 -dynamic-linker /lib64/ld-linux-x86-64.so.2 -o cmTC_2a545 /usr/lib/gcc/x86_64-linux-gnu/4.8/../../../x86_64-linux-gnu/crt1.o /usr/lib/gcc/x86_64-linux-gnu/4.8/../../../x86_64-linux-gnu/crti.o /usr/lib/gcc/x86_64-linux-gnu/4.8/crtbegin.o -L/usr/lib/gcc/x86_64-linux-gnu/4.8 -L/usr/lib/gcc/x86_64-linux-gnu/4.8/../../../x86_64-linux-gnu -L/lib/x86_64-linux-gnu -L/lib/../lib64 -L/usr/lib/x86_64-linux-gnu -L/usr/lib/gcc/x86_64-linux-gnu/4.8/../../.. -L/vagrant/llvm/build/bin/../lib -L/lib -L/usr/lib CMakeFiles/cmTC_2a545.dir/CMakeCCompilerABI.c.o -lgcc --as-needed -lgcc_s --no-as-needed -lc -lgcc --as-needed -lgcc_s --no-as-needed /usr/lib/gcc/x86_64-linux-gnu/4.8/crtend.o /usr/lib/gcc/x86_64-linux-gnu/4.8/../../../x86_64-linux-gnu/crtn.o]
+  link line: [ "/usr/bin/ld" -z relro --hash-style=gnu --eh-frame-hdr -m elf_x86_64 -dynamic-linker /lib64/ld-linux-x86-64.so.2 -o cmTC_d0c0c /usr/lib/gcc/x86_64-linux-gnu/4.8/../../../x86_64-linux-gnu/crt1.o /usr/lib/gcc/x86_64-linux-gnu/4.8/../../../x86_64-linux-gnu/crti.o /usr/lib/gcc/x86_64-linux-gnu/4.8/crtbegin.o -L/usr/lib/gcc/x86_64-linux-gnu/4.8 -L/usr/lib/gcc/x86_64-linux-gnu/4.8/../../../x86_64-linux-gnu -L/lib/x86_64-linux-gnu -L/lib/../lib64 -L/usr/lib/x86_64-linux-gnu -L/usr/lib/gcc/x86_64-linux-gnu/4.8/../../.. -L/vagrant/llvm/build/bin/../lib -L/lib -L/usr/lib -whole-archive /vagrant/llvm/build/bin/../lib/clang/3.9.1/lib/linux/libclang_rt.ubsan_standalone-x86_64.a -no-whole-archive --dynamic-list=/vagrant/llvm/build/bin/../lib/clang/3.9.1/lib/linux/libclang_rt.ubsan_standalone-x86_64.a.syms -whole-archive /vagrant/llvm/build/bin/../lib/clang/3.9.1/lib/linux/libclang_rt.vasan-x86_64.a -no-whole-archive -whole-archive /vagrant/llvm/build/bin/../lib/clang/3.9.1/lib/linux/libclang_rt.vasancaller-x86_64.a -no-whole-archive -export-dynamic -lstdc++ CMakeFiles/cmTC_d0c0c.dir/CMakeCCompilerABI.c.o --no-as-needed -lpthread -lrt -lm -ldl -lgcc --as-needed -lgcc_s --no-as-needed -lc -lgcc --as-needed -lgcc_s --no-as-needed /usr/lib/gcc/x86_64-linux-gnu/4.8/crtend.o /usr/lib/gcc/x86_64-linux-gnu/4.8/../../../x86_64-linux-gnu/crtn.o]
     arg [/usr/bin/ld] ==> ignore
     arg [-zrelro] ==> ignore
     arg [--hash-style=gnu] ==> ignore
@@ -106,7 +109,7 @@ Parsed C implicit link information from above output:
     arg [-dynamic-linker] ==> ignore
     arg [/lib64/ld-linux-x86-64.so.2] ==> ignore
     arg [-o] ==> ignore
-    arg [cmTC_2a545] ==> ignore
+    arg [cmTC_d0c0c] ==> ignore
     arg [/usr/lib/gcc/x86_64-linux-gnu/4.8/../../../x86_64-linux-gnu/crt1.o] ==> ignore
     arg [/usr/lib/gcc/x86_64-linux-gnu/4.8/../../../x86_64-linux-gnu/crti.o] ==> ignore
     arg [/usr/lib/gcc/x86_64-linux-gnu/4.8/crtbegin.o] ==> ignore
@@ -119,7 +122,24 @@ Parsed C implicit link information from above output:
     arg [-L/vagrant/llvm/build/bin/../lib] ==> dir [/vagrant/llvm/build/bin/../lib]
     arg [-L/lib] ==> dir [/lib]
     arg [-L/usr/lib] ==> dir [/usr/lib]
-    arg [CMakeFiles/cmTC_2a545.dir/CMakeCCompilerABI.c.o] ==> ignore
+    arg [-whole-archive] ==> ignore
+    arg [/vagrant/llvm/build/bin/../lib/clang/3.9.1/lib/linux/libclang_rt.ubsan_standalone-x86_64.a] ==> lib [/vagrant/llvm/build/bin/../lib/clang/3.9.1/lib/linux/libclang_rt.ubsan_standalone-x86_64.a]
+    arg [-no-whole-archive] ==> ignore
+    arg [--dynamic-list=/vagrant/llvm/build/bin/../lib/clang/3.9.1/lib/linux/libclang_rt.ubsan_standalone-x86_64.a.syms] ==> ignore
+    arg [-whole-archive] ==> ignore
+    arg [/vagrant/llvm/build/bin/../lib/clang/3.9.1/lib/linux/libclang_rt.vasan-x86_64.a] ==> lib [/vagrant/llvm/build/bin/../lib/clang/3.9.1/lib/linux/libclang_rt.vasan-x86_64.a]
+    arg [-no-whole-archive] ==> ignore
+    arg [-whole-archive] ==> ignore
+    arg [/vagrant/llvm/build/bin/../lib/clang/3.9.1/lib/linux/libclang_rt.vasancaller-x86_64.a] ==> lib [/vagrant/llvm/build/bin/../lib/clang/3.9.1/lib/linux/libclang_rt.vasancaller-x86_64.a]
+    arg [-no-whole-archive] ==> ignore
+    arg [-export-dynamic] ==> ignore
+    arg [-lstdc++] ==> lib [stdc++]
+    arg [CMakeFiles/cmTC_d0c0c.dir/CMakeCCompilerABI.c.o] ==> ignore
+    arg [--no-as-needed] ==> ignore
+    arg [-lpthread] ==> lib [pthread]
+    arg [-lrt] ==> lib [rt]
+    arg [-lm] ==> lib [m]
+    arg [-ldl] ==> lib [dl]
     arg [-lgcc] ==> lib [gcc]
     arg [--as-needed] ==> ignore
     arg [-lgcc_s] ==> lib [gcc_s]
@@ -131,6 +151,9 @@ Parsed C implicit link information from above output:
     arg [--no-as-needed] ==> ignore
     arg [/usr/lib/gcc/x86_64-linux-gnu/4.8/crtend.o] ==> ignore
     arg [/usr/lib/gcc/x86_64-linux-gnu/4.8/../../../x86_64-linux-gnu/crtn.o] ==> ignore
+  remove lib [/vagrant/llvm/build/bin/../lib/clang/3.9.1/lib/linux/libclang_rt.ubsan_standalone-x86_64.a]
+  remove lib [/vagrant/llvm/build/bin/../lib/clang/3.9.1/lib/linux/libclang_rt.vasan-x86_64.a]
+  remove lib [/vagrant/llvm/build/bin/../lib/clang/3.9.1/lib/linux/libclang_rt.vasancaller-x86_64.a]
   remove lib [gcc]
   remove lib [gcc_s]
   remove lib [gcc]
@@ -144,7 +167,7 @@ Parsed C implicit link information from above output:
   collapse library dir [/vagrant/llvm/build/bin/../lib] ==> [/vagrant/llvm/build/lib]
   collapse library dir [/lib] ==> [/lib]
   collapse library dir [/usr/lib] ==> [/usr/lib]
-  implicit libs: [c]
+  implicit libs: [stdc++;pthread;rt;m;dl;c]
   implicit dirs: [/usr/lib/gcc/x86_64-linux-gnu/4.8;/usr/lib/x86_64-linux-gnu;/lib/x86_64-linux-gnu;/lib64;/usr/lib;/vagrant/llvm/build/lib;/lib]
   implicit fwks: []
 
@@ -154,14 +177,15 @@ Parsed C implicit link information from above output:
 Detecting C [-std=c11] compiler features compiled with the following output:
 Change Dir: /home/vagrant/reproduce_static_dependency_crash/build_static/CMakeFiles/CMakeTmp
 
-Run Build Command:"/usr/bin/make" "cmTC_a2dfd/fast"
-/usr/bin/make -f CMakeFiles/cmTC_a2dfd.dir/build.make CMakeFiles/cmTC_a2dfd.dir/build
+Run Build Command:"/usr/bin/make" "cmTC_c00e9/fast"
+/usr/bin/make -f CMakeFiles/cmTC_c00e9.dir/build.make CMakeFiles/cmTC_c00e9.dir/build
 make[1]: Entering directory `/home/vagrant/reproduce_static_dependency_crash/build_static/CMakeFiles/CMakeTmp'
-Building C object CMakeFiles/cmTC_a2dfd.dir/feature_tests.c.o
-/vagrant/llvm/build/bin/clang    -std=c11 -o CMakeFiles/cmTC_a2dfd.dir/feature_tests.c.o   -c /home/vagrant/reproduce_static_dependency_crash/build_static/CMakeFiles/feature_tests.c
-Linking C executable cmTC_a2dfd
-/home/vagrant/cmake-3.7.2-Linux-x86_64/bin/cmake -E cmake_link_script CMakeFiles/cmTC_a2dfd.dir/link.txt --verbose=1
-/vagrant/llvm/build/bin/clang       CMakeFiles/cmTC_a2dfd.dir/feature_tests.c.o  -o cmTC_a2dfd 
+Building C object CMakeFiles/cmTC_c00e9.dir/feature_tests.c.o
+/vagrant/llvm/build/bin/clang    -lstdc++ -fsanitize=vasan -fsanitize=vasancaller    -std=c11 -o CMakeFiles/cmTC_c00e9.dir/feature_tests.c.o   -c /home/vagrant/reproduce_static_dependency_crash/build_static/CMakeFiles/feature_tests.c
+clang: warning: -Z-reserved-lib-stdc++: 'linker' input unused
+Linking C executable cmTC_c00e9
+/home/vagrant/cmake-3.7.2-Linux-x86_64/bin/cmake -E cmake_link_script CMakeFiles/cmTC_c00e9.dir/link.txt --verbose=1
+/vagrant/llvm/build/bin/clang  -lstdc++ -fsanitize=vasan -fsanitize=vasancaller     CMakeFiles/cmTC_c00e9.dir/feature_tests.c.o  -o cmTC_c00e9 
 make[1]: Leaving directory `/home/vagrant/reproduce_static_dependency_crash/build_static/CMakeFiles/CMakeTmp'
 
 
@@ -174,14 +198,15 @@ make[1]: Leaving directory `/home/vagrant/reproduce_static_dependency_crash/buil
 Detecting C [-std=c99] compiler features compiled with the following output:
 Change Dir: /home/vagrant/reproduce_static_dependency_crash/build_static/CMakeFiles/CMakeTmp
 
-Run Build Command:"/usr/bin/make" "cmTC_83707/fast"
-/usr/bin/make -f CMakeFiles/cmTC_83707.dir/build.make CMakeFiles/cmTC_83707.dir/build
+Run Build Command:"/usr/bin/make" "cmTC_b7dfc/fast"
+/usr/bin/make -f CMakeFiles/cmTC_b7dfc.dir/build.make CMakeFiles/cmTC_b7dfc.dir/build
 make[1]: Entering directory `/home/vagrant/reproduce_static_dependency_crash/build_static/CMakeFiles/CMakeTmp'
-Building C object CMakeFiles/cmTC_83707.dir/feature_tests.c.o
-/vagrant/llvm/build/bin/clang    -std=c99 -o CMakeFiles/cmTC_83707.dir/feature_tests.c.o   -c /home/vagrant/reproduce_static_dependency_crash/build_static/CMakeFiles/feature_tests.c
-Linking C executable cmTC_83707
-/home/vagrant/cmake-3.7.2-Linux-x86_64/bin/cmake -E cmake_link_script CMakeFiles/cmTC_83707.dir/link.txt --verbose=1
-/vagrant/llvm/build/bin/clang       CMakeFiles/cmTC_83707.dir/feature_tests.c.o  -o cmTC_83707 
+Building C object CMakeFiles/cmTC_b7dfc.dir/feature_tests.c.o
+/vagrant/llvm/build/bin/clang    -lstdc++ -fsanitize=vasan -fsanitize=vasancaller    -std=c99 -o CMakeFiles/cmTC_b7dfc.dir/feature_tests.c.o   -c /home/vagrant/reproduce_static_dependency_crash/build_static/CMakeFiles/feature_tests.c
+clang: warning: -Z-reserved-lib-stdc++: 'linker' input unused
+Linking C executable cmTC_b7dfc
+/home/vagrant/cmake-3.7.2-Linux-x86_64/bin/cmake -E cmake_link_script CMakeFiles/cmTC_b7dfc.dir/link.txt --verbose=1
+/vagrant/llvm/build/bin/clang  -lstdc++ -fsanitize=vasan -fsanitize=vasancaller     CMakeFiles/cmTC_b7dfc.dir/feature_tests.c.o  -o cmTC_b7dfc 
 make[1]: Leaving directory `/home/vagrant/reproduce_static_dependency_crash/build_static/CMakeFiles/CMakeTmp'
 
 
@@ -194,14 +219,15 @@ make[1]: Leaving directory `/home/vagrant/reproduce_static_dependency_crash/buil
 Detecting C [-std=c90] compiler features compiled with the following output:
 Change Dir: /home/vagrant/reproduce_static_dependency_crash/build_static/CMakeFiles/CMakeTmp
 
-Run Build Command:"/usr/bin/make" "cmTC_b23c4/fast"
-/usr/bin/make -f CMakeFiles/cmTC_b23c4.dir/build.make CMakeFiles/cmTC_b23c4.dir/build
+Run Build Command:"/usr/bin/make" "cmTC_bdea9/fast"
+/usr/bin/make -f CMakeFiles/cmTC_bdea9.dir/build.make CMakeFiles/cmTC_bdea9.dir/build
 make[1]: Entering directory `/home/vagrant/reproduce_static_dependency_crash/build_static/CMakeFiles/CMakeTmp'
-Building C object CMakeFiles/cmTC_b23c4.dir/feature_tests.c.o
-/vagrant/llvm/build/bin/clang    -std=c90 -o CMakeFiles/cmTC_b23c4.dir/feature_tests.c.o   -c /home/vagrant/reproduce_static_dependency_crash/build_static/CMakeFiles/feature_tests.c
-Linking C executable cmTC_b23c4
-/home/vagrant/cmake-3.7.2-Linux-x86_64/bin/cmake -E cmake_link_script CMakeFiles/cmTC_b23c4.dir/link.txt --verbose=1
-/vagrant/llvm/build/bin/clang       CMakeFiles/cmTC_b23c4.dir/feature_tests.c.o  -o cmTC_b23c4 
+Building C object CMakeFiles/cmTC_bdea9.dir/feature_tests.c.o
+/vagrant/llvm/build/bin/clang    -lstdc++ -fsanitize=vasan -fsanitize=vasancaller    -std=c90 -o CMakeFiles/cmTC_bdea9.dir/feature_tests.c.o   -c /home/vagrant/reproduce_static_dependency_crash/build_static/CMakeFiles/feature_tests.c
+clang: warning: -Z-reserved-lib-stdc++: 'linker' input unused
+Linking C executable cmTC_bdea9
+/home/vagrant/cmake-3.7.2-Linux-x86_64/bin/cmake -E cmake_link_script CMakeFiles/cmTC_bdea9.dir/link.txt --verbose=1
+/vagrant/llvm/build/bin/clang  -lstdc++ -fsanitize=vasan -fsanitize=vasancaller     CMakeFiles/cmTC_bdea9.dir/feature_tests.c.o  -o cmTC_bdea9 
 make[1]: Leaving directory `/home/vagrant/reproduce_static_dependency_crash/build_static/CMakeFiles/CMakeTmp'
 
 
@@ -212,28 +238,30 @@ make[1]: Leaving directory `/home/vagrant/reproduce_static_dependency_crash/buil
 Determining if the CXX compiler works passed with the following output:
 Change Dir: /home/vagrant/reproduce_static_dependency_crash/build_static/CMakeFiles/CMakeTmp
 
-Run Build Command:"/usr/bin/make" "cmTC_05528/fast"
-/usr/bin/make -f CMakeFiles/cmTC_05528.dir/build.make CMakeFiles/cmTC_05528.dir/build
+Run Build Command:"/usr/bin/make" "cmTC_bddfe/fast"
+/usr/bin/make -f CMakeFiles/cmTC_bddfe.dir/build.make CMakeFiles/cmTC_bddfe.dir/build
 make[1]: Entering directory `/home/vagrant/reproduce_static_dependency_crash/build_static/CMakeFiles/CMakeTmp'
-Building CXX object CMakeFiles/cmTC_05528.dir/testCXXCompiler.cxx.o
-/vagrant/llvm/build/bin/clang++      -o CMakeFiles/cmTC_05528.dir/testCXXCompiler.cxx.o -c /home/vagrant/reproduce_static_dependency_crash/build_static/CMakeFiles/CMakeTmp/testCXXCompiler.cxx
-Linking CXX executable cmTC_05528
-/home/vagrant/cmake-3.7.2-Linux-x86_64/bin/cmake -E cmake_link_script CMakeFiles/cmTC_05528.dir/link.txt --verbose=1
-/vagrant/llvm/build/bin/clang++        CMakeFiles/cmTC_05528.dir/testCXXCompiler.cxx.o  -o cmTC_05528 
+Building CXX object CMakeFiles/cmTC_bddfe.dir/testCXXCompiler.cxx.o
+/vagrant/llvm/build/bin/clang++     -lstdc++ -fsanitize=vasan -fsanitize=vasancaller    -o CMakeFiles/cmTC_bddfe.dir/testCXXCompiler.cxx.o -c /home/vagrant/reproduce_static_dependency_crash/build_static/CMakeFiles/CMakeTmp/testCXXCompiler.cxx
+clang++: warning: -Z-reserved-lib-stdc++: 'linker' input unused
+Linking CXX executable cmTC_bddfe
+/home/vagrant/cmake-3.7.2-Linux-x86_64/bin/cmake -E cmake_link_script CMakeFiles/cmTC_bddfe.dir/link.txt --verbose=1
+/vagrant/llvm/build/bin/clang++   -lstdc++ -fsanitize=vasan -fsanitize=vasancaller     CMakeFiles/cmTC_bddfe.dir/testCXXCompiler.cxx.o  -o cmTC_bddfe 
 make[1]: Leaving directory `/home/vagrant/reproduce_static_dependency_crash/build_static/CMakeFiles/CMakeTmp'
 
 
 Detecting CXX compiler ABI info compiled with the following output:
 Change Dir: /home/vagrant/reproduce_static_dependency_crash/build_static/CMakeFiles/CMakeTmp
 
-Run Build Command:"/usr/bin/make" "cmTC_216b8/fast"
-/usr/bin/make -f CMakeFiles/cmTC_216b8.dir/build.make CMakeFiles/cmTC_216b8.dir/build
+Run Build Command:"/usr/bin/make" "cmTC_f8a85/fast"
+/usr/bin/make -f CMakeFiles/cmTC_f8a85.dir/build.make CMakeFiles/cmTC_f8a85.dir/build
 make[1]: Entering directory `/home/vagrant/reproduce_static_dependency_crash/build_static/CMakeFiles/CMakeTmp'
-Building CXX object CMakeFiles/cmTC_216b8.dir/CMakeCXXCompilerABI.cpp.o
-/vagrant/llvm/build/bin/clang++      -o CMakeFiles/cmTC_216b8.dir/CMakeCXXCompilerABI.cpp.o -c /home/vagrant/cmake-3.7.2-Linux-x86_64/share/cmake-3.7/Modules/CMakeCXXCompilerABI.cpp
-Linking CXX executable cmTC_216b8
-/home/vagrant/cmake-3.7.2-Linux-x86_64/bin/cmake -E cmake_link_script CMakeFiles/cmTC_216b8.dir/link.txt --verbose=1
-/vagrant/llvm/build/bin/clang++       -v CMakeFiles/cmTC_216b8.dir/CMakeCXXCompilerABI.cpp.o  -o cmTC_216b8  
+Building CXX object CMakeFiles/cmTC_f8a85.dir/CMakeCXXCompilerABI.cpp.o
+/vagrant/llvm/build/bin/clang++     -lstdc++ -fsanitize=vasan -fsanitize=vasancaller    -o CMakeFiles/cmTC_f8a85.dir/CMakeCXXCompilerABI.cpp.o -c /home/vagrant/cmake-3.7.2-Linux-x86_64/share/cmake-3.7/Modules/CMakeCXXCompilerABI.cpp
+clang++: warning: -Z-reserved-lib-stdc++: 'linker' input unused
+Linking CXX executable cmTC_f8a85
+/home/vagrant/cmake-3.7.2-Linux-x86_64/bin/cmake -E cmake_link_script CMakeFiles/cmTC_f8a85.dir/link.txt --verbose=1
+/vagrant/llvm/build/bin/clang++   -lstdc++ -fsanitize=vasan -fsanitize=vasancaller    -v CMakeFiles/cmTC_f8a85.dir/CMakeCXXCompilerABI.cpp.o  -o cmTC_f8a85  
 clang version 3.9.1 
 Target: x86_64-unknown-linux-gnu
 Thread model: posix
@@ -247,7 +275,7 @@ Candidate multilib: .;@m64
 Candidate multilib: 32;@m32
 Candidate multilib: x32;@mx32
 Selected multilib: .;@m64
- "/usr/bin/ld" -z relro --hash-style=gnu --eh-frame-hdr -m elf_x86_64 -dynamic-linker /lib64/ld-linux-x86-64.so.2 -o cmTC_216b8 /usr/lib/gcc/x86_64-linux-gnu/4.8/../../../x86_64-linux-gnu/crt1.o /usr/lib/gcc/x86_64-linux-gnu/4.8/../../../x86_64-linux-gnu/crti.o /usr/lib/gcc/x86_64-linux-gnu/4.8/crtbegin.o -L/usr/lib/gcc/x86_64-linux-gnu/4.8 -L/usr/lib/gcc/x86_64-linux-gnu/4.8/../../../x86_64-linux-gnu -L/lib/x86_64-linux-gnu -L/lib/../lib64 -L/usr/lib/x86_64-linux-gnu -L/usr/lib/gcc/x86_64-linux-gnu/4.8/../../.. -L/vagrant/llvm/build/bin/../lib -L/lib -L/usr/lib CMakeFiles/cmTC_216b8.dir/CMakeCXXCompilerABI.cpp.o -lstdc++ -lm -lgcc_s -lgcc -lc -lgcc_s -lgcc /usr/lib/gcc/x86_64-linux-gnu/4.8/crtend.o /usr/lib/gcc/x86_64-linux-gnu/4.8/../../../x86_64-linux-gnu/crtn.o
+ "/usr/bin/ld" -z relro --hash-style=gnu --eh-frame-hdr -m elf_x86_64 -dynamic-linker /lib64/ld-linux-x86-64.so.2 -o cmTC_f8a85 /usr/lib/gcc/x86_64-linux-gnu/4.8/../../../x86_64-linux-gnu/crt1.o /usr/lib/gcc/x86_64-linux-gnu/4.8/../../../x86_64-linux-gnu/crti.o /usr/lib/gcc/x86_64-linux-gnu/4.8/crtbegin.o -L/usr/lib/gcc/x86_64-linux-gnu/4.8 -L/usr/lib/gcc/x86_64-linux-gnu/4.8/../../../x86_64-linux-gnu -L/lib/x86_64-linux-gnu -L/lib/../lib64 -L/usr/lib/x86_64-linux-gnu -L/usr/lib/gcc/x86_64-linux-gnu/4.8/../../.. -L/vagrant/llvm/build/bin/../lib -L/lib -L/usr/lib -whole-archive /vagrant/llvm/build/bin/../lib/clang/3.9.1/lib/linux/libclang_rt.ubsan_standalone-x86_64.a -no-whole-archive --dynamic-list=/vagrant/llvm/build/bin/../lib/clang/3.9.1/lib/linux/libclang_rt.ubsan_standalone-x86_64.a.syms -whole-archive /vagrant/llvm/build/bin/../lib/clang/3.9.1/lib/linux/libclang_rt.ubsan_standalone_cxx-x86_64.a -no-whole-archive --dynamic-list=/vagrant/llvm/build/bin/../lib/clang/3.9.1/lib/linux/libclang_rt.ubsan_standalone_cxx-x86_64.a.syms -whole-archive /vagrant/llvm/build/bin/../lib/clang/3.9.1/lib/linux/libclang_rt.vasan-x86_64.a -no-whole-archive -whole-archive /vagrant/llvm/build/bin/../lib/clang/3.9.1/lib/linux/libclang_rt.vasancaller-x86_64.a -no-whole-archive -export-dynamic -lstdc++ CMakeFiles/cmTC_f8a85.dir/CMakeCXXCompilerABI.cpp.o -lstdc++ -lm --no-as-needed -lpthread -lrt -lm -ldl -lgcc_s -lgcc -lc -lgcc_s -lgcc /usr/lib/gcc/x86_64-linux-gnu/4.8/crtend.o /usr/lib/gcc/x86_64-linux-gnu/4.8/../../../x86_64-linux-gnu/crtn.o
 make[1]: Leaving directory `/home/vagrant/reproduce_static_dependency_crash/build_static/CMakeFiles/CMakeTmp'
 
 
@@ -255,14 +283,15 @@ Parsed CXX implicit link information from above output:
   link line regex: [^( *|.*[/\])(ld|([^/\]+-)?ld|collect2)[^/\]*( |$)]
   ignore line: [Change Dir: /home/vagrant/reproduce_static_dependency_crash/build_static/CMakeFiles/CMakeTmp]
   ignore line: []
-  ignore line: [Run Build Command:"/usr/bin/make" "cmTC_216b8/fast"]
-  ignore line: [/usr/bin/make -f CMakeFiles/cmTC_216b8.dir/build.make CMakeFiles/cmTC_216b8.dir/build]
+  ignore line: [Run Build Command:"/usr/bin/make" "cmTC_f8a85/fast"]
+  ignore line: [/usr/bin/make -f CMakeFiles/cmTC_f8a85.dir/build.make CMakeFiles/cmTC_f8a85.dir/build]
   ignore line: [make[1]: Entering directory `/home/vagrant/reproduce_static_dependency_crash/build_static/CMakeFiles/CMakeTmp']
-  ignore line: [Building CXX object CMakeFiles/cmTC_216b8.dir/CMakeCXXCompilerABI.cpp.o]
-  ignore line: [/vagrant/llvm/build/bin/clang++      -o CMakeFiles/cmTC_216b8.dir/CMakeCXXCompilerABI.cpp.o -c /home/vagrant/cmake-3.7.2-Linux-x86_64/share/cmake-3.7/Modules/CMakeCXXCompilerABI.cpp]
-  ignore line: [Linking CXX executable cmTC_216b8]
-  ignore line: [/home/vagrant/cmake-3.7.2-Linux-x86_64/bin/cmake -E cmake_link_script CMakeFiles/cmTC_216b8.dir/link.txt --verbose=1]
-  ignore line: [/vagrant/llvm/build/bin/clang++       -v CMakeFiles/cmTC_216b8.dir/CMakeCXXCompilerABI.cpp.o  -o cmTC_216b8  ]
+  ignore line: [Building CXX object CMakeFiles/cmTC_f8a85.dir/CMakeCXXCompilerABI.cpp.o]
+  ignore line: [/vagrant/llvm/build/bin/clang++     -lstdc++ -fsanitize=vasan -fsanitize=vasancaller    -o CMakeFiles/cmTC_f8a85.dir/CMakeCXXCompilerABI.cpp.o -c /home/vagrant/cmake-3.7.2-Linux-x86_64/share/cmake-3.7/Modules/CMakeCXXCompilerABI.cpp]
+  ignore line: [clang++: warning: -Z-reserved-lib-stdc++: 'linker' input unused]
+  ignore line: [Linking CXX executable cmTC_f8a85]
+  ignore line: [/home/vagrant/cmake-3.7.2-Linux-x86_64/bin/cmake -E cmake_link_script CMakeFiles/cmTC_f8a85.dir/link.txt --verbose=1]
+  ignore line: [/vagrant/llvm/build/bin/clang++   -lstdc++ -fsanitize=vasan -fsanitize=vasancaller    -v CMakeFiles/cmTC_f8a85.dir/CMakeCXXCompilerABI.cpp.o  -o cmTC_f8a85  ]
   ignore line: [clang version 3.9.1 ]
   ignore line: [Target: x86_64-unknown-linux-gnu]
   ignore line: [Thread model: posix]
@@ -280,7 +309,7 @@ Parsed CXX implicit link information from above output:
   ignore line: [@mx32]
   ignore line: [Selected multilib: .]
   ignore line: [@m64]
-  link line: [ "/usr/bin/ld" -z relro --hash-style=gnu --eh-frame-hdr -m elf_x86_64 -dynamic-linker /lib64/ld-linux-x86-64.so.2 -o cmTC_216b8 /usr/lib/gcc/x86_64-linux-gnu/4.8/../../../x86_64-linux-gnu/crt1.o /usr/lib/gcc/x86_64-linux-gnu/4.8/../../../x86_64-linux-gnu/crti.o /usr/lib/gcc/x86_64-linux-gnu/4.8/crtbegin.o -L/usr/lib/gcc/x86_64-linux-gnu/4.8 -L/usr/lib/gcc/x86_64-linux-gnu/4.8/../../../x86_64-linux-gnu -L/lib/x86_64-linux-gnu -L/lib/../lib64 -L/usr/lib/x86_64-linux-gnu -L/usr/lib/gcc/x86_64-linux-gnu/4.8/../../.. -L/vagrant/llvm/build/bin/../lib -L/lib -L/usr/lib CMakeFiles/cmTC_216b8.dir/CMakeCXXCompilerABI.cpp.o -lstdc++ -lm -lgcc_s -lgcc -lc -lgcc_s -lgcc /usr/lib/gcc/x86_64-linux-gnu/4.8/crtend.o /usr/lib/gcc/x86_64-linux-gnu/4.8/../../../x86_64-linux-gnu/crtn.o]
+  link line: [ "/usr/bin/ld" -z relro --hash-style=gnu --eh-frame-hdr -m elf_x86_64 -dynamic-linker /lib64/ld-linux-x86-64.so.2 -o cmTC_f8a85 /usr/lib/gcc/x86_64-linux-gnu/4.8/../../../x86_64-linux-gnu/crt1.o /usr/lib/gcc/x86_64-linux-gnu/4.8/../../../x86_64-linux-gnu/crti.o /usr/lib/gcc/x86_64-linux-gnu/4.8/crtbegin.o -L/usr/lib/gcc/x86_64-linux-gnu/4.8 -L/usr/lib/gcc/x86_64-linux-gnu/4.8/../../../x86_64-linux-gnu -L/lib/x86_64-linux-gnu -L/lib/../lib64 -L/usr/lib/x86_64-linux-gnu -L/usr/lib/gcc/x86_64-linux-gnu/4.8/../../.. -L/vagrant/llvm/build/bin/../lib -L/lib -L/usr/lib -whole-archive /vagrant/llvm/build/bin/../lib/clang/3.9.1/lib/linux/libclang_rt.ubsan_standalone-x86_64.a -no-whole-archive --dynamic-list=/vagrant/llvm/build/bin/../lib/clang/3.9.1/lib/linux/libclang_rt.ubsan_standalone-x86_64.a.syms -whole-archive /vagrant/llvm/build/bin/../lib/clang/3.9.1/lib/linux/libclang_rt.ubsan_standalone_cxx-x86_64.a -no-whole-archive --dynamic-list=/vagrant/llvm/build/bin/../lib/clang/3.9.1/lib/linux/libclang_rt.ubsan_standalone_cxx-x86_64.a.syms -whole-archive /vagrant/llvm/build/bin/../lib/clang/3.9.1/lib/linux/libclang_rt.vasan-x86_64.a -no-whole-archive -whole-archive /vagrant/llvm/build/bin/../lib/clang/3.9.1/lib/linux/libclang_rt.vasancaller-x86_64.a -no-whole-archive -export-dynamic -lstdc++ CMakeFiles/cmTC_f8a85.dir/CMakeCXXCompilerABI.cpp.o -lstdc++ -lm --no-as-needed -lpthread -lrt -lm -ldl -lgcc_s -lgcc -lc -lgcc_s -lgcc /usr/lib/gcc/x86_64-linux-gnu/4.8/crtend.o /usr/lib/gcc/x86_64-linux-gnu/4.8/../../../x86_64-linux-gnu/crtn.o]
     arg [/usr/bin/ld] ==> ignore
     arg [-zrelro] ==> ignore
     arg [--hash-style=gnu] ==> ignore
@@ -290,7 +319,7 @@ Parsed CXX implicit link information from above output:
     arg [-dynamic-linker] ==> ignore
     arg [/lib64/ld-linux-x86-64.so.2] ==> ignore
     arg [-o] ==> ignore
-    arg [cmTC_216b8] ==> ignore
+    arg [cmTC_f8a85] ==> ignore
     arg [/usr/lib/gcc/x86_64-linux-gnu/4.8/../../../x86_64-linux-gnu/crt1.o] ==> ignore
     arg [/usr/lib/gcc/x86_64-linux-gnu/4.8/../../../x86_64-linux-gnu/crti.o] ==> ignore
     arg [/usr/lib/gcc/x86_64-linux-gnu/4.8/crtbegin.o] ==> ignore
@@ -303,9 +332,30 @@ Parsed CXX implicit link information from above output:
     arg [-L/vagrant/llvm/build/bin/../lib] ==> dir [/vagrant/llvm/build/bin/../lib]
     arg [-L/lib] ==> dir [/lib]
     arg [-L/usr/lib] ==> dir [/usr/lib]
-    arg [CMakeFiles/cmTC_216b8.dir/CMakeCXXCompilerABI.cpp.o] ==> ignore
+    arg [-whole-archive] ==> ignore
+    arg [/vagrant/llvm/build/bin/../lib/clang/3.9.1/lib/linux/libclang_rt.ubsan_standalone-x86_64.a] ==> lib [/vagrant/llvm/build/bin/../lib/clang/3.9.1/lib/linux/libclang_rt.ubsan_standalone-x86_64.a]
+    arg [-no-whole-archive] ==> ignore
+    arg [--dynamic-list=/vagrant/llvm/build/bin/../lib/clang/3.9.1/lib/linux/libclang_rt.ubsan_standalone-x86_64.a.syms] ==> ignore
+    arg [-whole-archive] ==> ignore
+    arg [/vagrant/llvm/build/bin/../lib/clang/3.9.1/lib/linux/libclang_rt.ubsan_standalone_cxx-x86_64.a] ==> lib [/vagrant/llvm/build/bin/../lib/clang/3.9.1/lib/linux/libclang_rt.ubsan_standalone_cxx-x86_64.a]
+    arg [-no-whole-archive] ==> ignore
+    arg [--dynamic-list=/vagrant/llvm/build/bin/../lib/clang/3.9.1/lib/linux/libclang_rt.ubsan_standalone_cxx-x86_64.a.syms] ==> ignore
+    arg [-whole-archive] ==> ignore
+    arg [/vagrant/llvm/build/bin/../lib/clang/3.9.1/lib/linux/libclang_rt.vasan-x86_64.a] ==> lib [/vagrant/llvm/build/bin/../lib/clang/3.9.1/lib/linux/libclang_rt.vasan-x86_64.a]
+    arg [-no-whole-archive] ==> ignore
+    arg [-whole-archive] ==> ignore
+    arg [/vagrant/llvm/build/bin/../lib/clang/3.9.1/lib/linux/libclang_rt.vasancaller-x86_64.a] ==> lib [/vagrant/llvm/build/bin/../lib/clang/3.9.1/lib/linux/libclang_rt.vasancaller-x86_64.a]
+    arg [-no-whole-archive] ==> ignore
+    arg [-export-dynamic] ==> ignore
+    arg [-lstdc++] ==> lib [stdc++]
+    arg [CMakeFiles/cmTC_f8a85.dir/CMakeCXXCompilerABI.cpp.o] ==> ignore
     arg [-lstdc++] ==> lib [stdc++]
     arg [-lm] ==> lib [m]
+    arg [--no-as-needed] ==> ignore
+    arg [-lpthread] ==> lib [pthread]
+    arg [-lrt] ==> lib [rt]
+    arg [-lm] ==> lib [m]
+    arg [-ldl] ==> lib [dl]
     arg [-lgcc_s] ==> lib [gcc_s]
     arg [-lgcc] ==> lib [gcc]
     arg [-lc] ==> lib [c]
@@ -313,6 +363,10 @@ Parsed CXX implicit link information from above output:
     arg [-lgcc] ==> lib [gcc]
     arg [/usr/lib/gcc/x86_64-linux-gnu/4.8/crtend.o] ==> ignore
     arg [/usr/lib/gcc/x86_64-linux-gnu/4.8/../../../x86_64-linux-gnu/crtn.o] ==> ignore
+  remove lib [/vagrant/llvm/build/bin/../lib/clang/3.9.1/lib/linux/libclang_rt.ubsan_standalone-x86_64.a]
+  remove lib [/vagrant/llvm/build/bin/../lib/clang/3.9.1/lib/linux/libclang_rt.ubsan_standalone_cxx-x86_64.a]
+  remove lib [/vagrant/llvm/build/bin/../lib/clang/3.9.1/lib/linux/libclang_rt.vasan-x86_64.a]
+  remove lib [/vagrant/llvm/build/bin/../lib/clang/3.9.1/lib/linux/libclang_rt.vasancaller-x86_64.a]
   remove lib [gcc_s]
   remove lib [gcc]
   remove lib [gcc_s]
@@ -326,7 +380,7 @@ Parsed CXX implicit link information from above output:
   collapse library dir [/vagrant/llvm/build/bin/../lib] ==> [/vagrant/llvm/build/lib]
   collapse library dir [/lib] ==> [/lib]
   collapse library dir [/usr/lib] ==> [/usr/lib]
-  implicit libs: [stdc++;m;c]
+  implicit libs: [stdc++;stdc++;m;pthread;rt;m;dl;c]
   implicit dirs: [/usr/lib/gcc/x86_64-linux-gnu/4.8;/usr/lib/x86_64-linux-gnu;/lib/x86_64-linux-gnu;/lib64;/usr/lib;/vagrant/llvm/build/lib;/lib]
   implicit fwks: []
 
@@ -336,14 +390,15 @@ Parsed CXX implicit link information from above output:
 Detecting CXX [-std=c++14] compiler features compiled with the following output:
 Change Dir: /home/vagrant/reproduce_static_dependency_crash/build_static/CMakeFiles/CMakeTmp
 
-Run Build Command:"/usr/bin/make" "cmTC_e59f8/fast"
-/usr/bin/make -f CMakeFiles/cmTC_e59f8.dir/build.make CMakeFiles/cmTC_e59f8.dir/build
+Run Build Command:"/usr/bin/make" "cmTC_7bb2d/fast"
+/usr/bin/make -f CMakeFiles/cmTC_7bb2d.dir/build.make CMakeFiles/cmTC_7bb2d.dir/build
 make[1]: Entering directory `/home/vagrant/reproduce_static_dependency_crash/build_static/CMakeFiles/CMakeTmp'
-Building CXX object CMakeFiles/cmTC_e59f8.dir/feature_tests.cxx.o
-/vagrant/llvm/build/bin/clang++     -std=c++14 -o CMakeFiles/cmTC_e59f8.dir/feature_tests.cxx.o -c /home/vagrant/reproduce_static_dependency_crash/build_static/CMakeFiles/feature_tests.cxx
-Linking CXX executable cmTC_e59f8
-/home/vagrant/cmake-3.7.2-Linux-x86_64/bin/cmake -E cmake_link_script CMakeFiles/cmTC_e59f8.dir/link.txt --verbose=1
-/vagrant/llvm/build/bin/clang++        CMakeFiles/cmTC_e59f8.dir/feature_tests.cxx.o  -o cmTC_e59f8 
+Building CXX object CMakeFiles/cmTC_7bb2d.dir/feature_tests.cxx.o
+/vagrant/llvm/build/bin/clang++     -lstdc++ -fsanitize=vasan -fsanitize=vasancaller    -std=c++14 -o CMakeFiles/cmTC_7bb2d.dir/feature_tests.cxx.o -c /home/vagrant/reproduce_static_dependency_crash/build_static/CMakeFiles/feature_tests.cxx
+clang++: warning: -Z-reserved-lib-stdc++: 'linker' input unused
+Linking CXX executable cmTC_7bb2d
+/home/vagrant/cmake-3.7.2-Linux-x86_64/bin/cmake -E cmake_link_script CMakeFiles/cmTC_7bb2d.dir/link.txt --verbose=1
+/vagrant/llvm/build/bin/clang++   -lstdc++ -fsanitize=vasan -fsanitize=vasancaller     CMakeFiles/cmTC_7bb2d.dir/feature_tests.cxx.o  -o cmTC_7bb2d 
 make[1]: Leaving directory `/home/vagrant/reproduce_static_dependency_crash/build_static/CMakeFiles/CMakeTmp'
 
 
@@ -409,14 +464,15 @@ make[1]: Leaving directory `/home/vagrant/reproduce_static_dependency_crash/buil
 Detecting CXX [-std=c++11] compiler features compiled with the following output:
 Change Dir: /home/vagrant/reproduce_static_dependency_crash/build_static/CMakeFiles/CMakeTmp
 
-Run Build Command:"/usr/bin/make" "cmTC_3e3e2/fast"
-/usr/bin/make -f CMakeFiles/cmTC_3e3e2.dir/build.make CMakeFiles/cmTC_3e3e2.dir/build
+Run Build Command:"/usr/bin/make" "cmTC_ee955/fast"
+/usr/bin/make -f CMakeFiles/cmTC_ee955.dir/build.make CMakeFiles/cmTC_ee955.dir/build
 make[1]: Entering directory `/home/vagrant/reproduce_static_dependency_crash/build_static/CMakeFiles/CMakeTmp'
-Building CXX object CMakeFiles/cmTC_3e3e2.dir/feature_tests.cxx.o
-/vagrant/llvm/build/bin/clang++     -std=c++11 -o CMakeFiles/cmTC_3e3e2.dir/feature_tests.cxx.o -c /home/vagrant/reproduce_static_dependency_crash/build_static/CMakeFiles/feature_tests.cxx
-Linking CXX executable cmTC_3e3e2
-/home/vagrant/cmake-3.7.2-Linux-x86_64/bin/cmake -E cmake_link_script CMakeFiles/cmTC_3e3e2.dir/link.txt --verbose=1
-/vagrant/llvm/build/bin/clang++        CMakeFiles/cmTC_3e3e2.dir/feature_tests.cxx.o  -o cmTC_3e3e2 
+Building CXX object CMakeFiles/cmTC_ee955.dir/feature_tests.cxx.o
+/vagrant/llvm/build/bin/clang++     -lstdc++ -fsanitize=vasan -fsanitize=vasancaller    -std=c++11 -o CMakeFiles/cmTC_ee955.dir/feature_tests.cxx.o -c /home/vagrant/reproduce_static_dependency_crash/build_static/CMakeFiles/feature_tests.cxx
+clang++: warning: -Z-reserved-lib-stdc++: 'linker' input unused
+Linking CXX executable cmTC_ee955
+/home/vagrant/cmake-3.7.2-Linux-x86_64/bin/cmake -E cmake_link_script CMakeFiles/cmTC_ee955.dir/link.txt --verbose=1
+/vagrant/llvm/build/bin/clang++   -lstdc++ -fsanitize=vasan -fsanitize=vasancaller     CMakeFiles/cmTC_ee955.dir/feature_tests.cxx.o  -o cmTC_ee955 
 make[1]: Leaving directory `/home/vagrant/reproduce_static_dependency_crash/build_static/CMakeFiles/CMakeTmp'
 
 
@@ -482,14 +538,15 @@ make[1]: Leaving directory `/home/vagrant/reproduce_static_dependency_crash/buil
 Detecting CXX [-std=c++98] compiler features compiled with the following output:
 Change Dir: /home/vagrant/reproduce_static_dependency_crash/build_static/CMakeFiles/CMakeTmp
 
-Run Build Command:"/usr/bin/make" "cmTC_70060/fast"
-/usr/bin/make -f CMakeFiles/cmTC_70060.dir/build.make CMakeFiles/cmTC_70060.dir/build
+Run Build Command:"/usr/bin/make" "cmTC_3ada0/fast"
+/usr/bin/make -f CMakeFiles/cmTC_3ada0.dir/build.make CMakeFiles/cmTC_3ada0.dir/build
 make[1]: Entering directory `/home/vagrant/reproduce_static_dependency_crash/build_static/CMakeFiles/CMakeTmp'
-Building CXX object CMakeFiles/cmTC_70060.dir/feature_tests.cxx.o
-/vagrant/llvm/build/bin/clang++     -std=c++98 -o CMakeFiles/cmTC_70060.dir/feature_tests.cxx.o -c /home/vagrant/reproduce_static_dependency_crash/build_static/CMakeFiles/feature_tests.cxx
-Linking CXX executable cmTC_70060
-/home/vagrant/cmake-3.7.2-Linux-x86_64/bin/cmake -E cmake_link_script CMakeFiles/cmTC_70060.dir/link.txt --verbose=1
-/vagrant/llvm/build/bin/clang++        CMakeFiles/cmTC_70060.dir/feature_tests.cxx.o  -o cmTC_70060 
+Building CXX object CMakeFiles/cmTC_3ada0.dir/feature_tests.cxx.o
+/vagrant/llvm/build/bin/clang++     -lstdc++ -fsanitize=vasan -fsanitize=vasancaller    -std=c++98 -o CMakeFiles/cmTC_3ada0.dir/feature_tests.cxx.o -c /home/vagrant/reproduce_static_dependency_crash/build_static/CMakeFiles/feature_tests.cxx
+clang++: warning: -Z-reserved-lib-stdc++: 'linker' input unused
+Linking CXX executable cmTC_3ada0
+/home/vagrant/cmake-3.7.2-Linux-x86_64/bin/cmake -E cmake_link_script CMakeFiles/cmTC_3ada0.dir/link.txt --verbose=1
+/vagrant/llvm/build/bin/clang++   -lstdc++ -fsanitize=vasan -fsanitize=vasancaller     CMakeFiles/cmTC_3ada0.dir/feature_tests.cxx.o  -o cmTC_3ada0 
 make[1]: Leaving directory `/home/vagrant/reproduce_static_dependency_crash/build_static/CMakeFiles/CMakeTmp'
 
 

@@ -1,15 +1,15 @@
 # The set of languages for which implicit dependencies are needed:
 set(CMAKE_DEPENDS_LANGUAGES
-  "CXX"
+  "C"
   )
 # The set of files for implicit dependencies of each language:
-set(CMAKE_DEPENDS_CHECK_CXX
-  "/home/vagrant/reproduce_static_dependency_crash/libstatic/src/Unuseful.cpp" "/home/vagrant/reproduce_static_dependency_crash/build_static/CMakeFiles/unuseful.dir/src/Unuseful.cpp.o"
+set(CMAKE_DEPENDS_CHECK_C
+  "/home/vagrant/reproduce_static_dependency_crash/libstatic/src/ExternalVariadic.c" "/home/vagrant/reproduce_static_dependency_crash/build_static/CMakeFiles/unuseful.dir/src/ExternalVariadic.c.o"
   )
-set(CMAKE_CXX_COMPILER_ID "Clang")
+set(CMAKE_C_COMPILER_ID "Clang")
 
 # The include file search paths:
-set(CMAKE_CXX_TARGET_INCLUDE_PATH
+set(CMAKE_C_TARGET_INCLUDE_PATH
   "/home/vagrant/reproduce_static_dependency_crash/libstatic/include"
   )
 

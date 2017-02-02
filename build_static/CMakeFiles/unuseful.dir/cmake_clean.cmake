@@ -1,10 +1,10 @@
 file(REMOVE_RECURSE
-  "CMakeFiles/unuseful.dir/src/Unuseful.cpp.o"
+  "CMakeFiles/unuseful.dir/src/ExternalVariadic.c.o"
   "libunuseful.pdb"
   "libunuseful.a"
 )
 
 # Per-language clean rules from dependency scanning.
-foreach(lang CXX)
+foreach(lang C)
   include(CMakeFiles/unuseful.dir/cmake_clean_${lang}.cmake OPTIONAL)
 endforeach()

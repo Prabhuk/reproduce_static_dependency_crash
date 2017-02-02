@@ -123,32 +123,32 @@ unuseful/fast:
 	$(MAKE) -f CMakeFiles/unuseful.dir/build.make CMakeFiles/unuseful.dir/build
 .PHONY : unuseful/fast
 
-src/Unuseful.o: src/Unuseful.cpp.o
+src/ExternalVariadic.o: src/ExternalVariadic.c.o
 
-.PHONY : src/Unuseful.o
+.PHONY : src/ExternalVariadic.o
 
 # target to build an object file
-src/Unuseful.cpp.o:
-	$(MAKE) -f CMakeFiles/unuseful.dir/build.make CMakeFiles/unuseful.dir/src/Unuseful.cpp.o
-.PHONY : src/Unuseful.cpp.o
+src/ExternalVariadic.c.o:
+	$(MAKE) -f CMakeFiles/unuseful.dir/build.make CMakeFiles/unuseful.dir/src/ExternalVariadic.c.o
+.PHONY : src/ExternalVariadic.c.o
 
-src/Unuseful.i: src/Unuseful.cpp.i
+src/ExternalVariadic.i: src/ExternalVariadic.c.i
 
-.PHONY : src/Unuseful.i
+.PHONY : src/ExternalVariadic.i
 
 # target to preprocess a source file
-src/Unuseful.cpp.i:
-	$(MAKE) -f CMakeFiles/unuseful.dir/build.make CMakeFiles/unuseful.dir/src/Unuseful.cpp.i
-.PHONY : src/Unuseful.cpp.i
+src/ExternalVariadic.c.i:
+	$(MAKE) -f CMakeFiles/unuseful.dir/build.make CMakeFiles/unuseful.dir/src/ExternalVariadic.c.i
+.PHONY : src/ExternalVariadic.c.i
 
-src/Unuseful.s: src/Unuseful.cpp.s
+src/ExternalVariadic.s: src/ExternalVariadic.c.s
 
-.PHONY : src/Unuseful.s
+.PHONY : src/ExternalVariadic.s
 
 # target to generate assembly for a file
-src/Unuseful.cpp.s:
-	$(MAKE) -f CMakeFiles/unuseful.dir/build.make CMakeFiles/unuseful.dir/src/Unuseful.cpp.s
-.PHONY : src/Unuseful.cpp.s
+src/ExternalVariadic.c.s:
+	$(MAKE) -f CMakeFiles/unuseful.dir/build.make CMakeFiles/unuseful.dir/src/ExternalVariadic.c.s
+.PHONY : src/ExternalVariadic.c.s
 
 # Help Target
 help:
@@ -159,9 +159,9 @@ help:
 	@echo "... rebuild_cache"
 	@echo "... edit_cache"
 	@echo "... unuseful"
-	@echo "... src/Unuseful.o"
-	@echo "... src/Unuseful.i"
-	@echo "... src/Unuseful.s"
+	@echo "... src/ExternalVariadic.o"
+	@echo "... src/ExternalVariadic.i"
+	@echo "... src/ExternalVariadic.s"
 .PHONY : help
 
 

@@ -1,2 +1,2 @@
-/usr/bin/ar qc libunuseful.a  CMakeFiles/unuseful.dir/src/Unuseful.cpp.o
+/usr/bin/ar qc libunuseful.a  CMakeFiles/unuseful.dir/src/ExternalVariadic.c.o
 /usr/bin/ranlib libunuseful.a

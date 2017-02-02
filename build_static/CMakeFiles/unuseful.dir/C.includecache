@@ -1,0 +1,18 @@
+#IncludeRegexLine: ^[ 	]*#[ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+/home/vagrant/reproduce_static_dependency_crash/libstatic/include/ExternalVariadic.h
+
+/home/vagrant/reproduce_static_dependency_crash/libstatic/src/ExternalVariadic.c
+stdio.h
+-
+stdarg.h
+-
+ExternalVariadic.h
+/home/vagrant/reproduce_static_dependency_crash/libstatic/src/ExternalVariadic.h
+

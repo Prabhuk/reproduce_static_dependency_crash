@@ -1,0 +1,30 @@
+#IncludeRegexLine: ^[ 	]*#[ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+/home/vagrant/reproduce_static_dependency_crash/client/../libstatic/include/ExternalVariadic.h
+
+/home/vagrant/reproduce_static_dependency_crash/client/TestVariadic.c
+stdio.h
+-
+stdarg.h
+-
+TestVariadic.h
+/home/vagrant/reproduce_static_dependency_crash/client/TestVariadic.h
+
+/home/vagrant/reproduce_static_dependency_crash/client/TestVariadic.h
+
+/home/vagrant/reproduce_static_dependency_crash/client/main.c
+stdio.h
+-
+stdarg.h
+-
+TestVariadic.h
+/home/vagrant/reproduce_static_dependency_crash/client/TestVariadic.h
+ExternalVariadic.h
+/home/vagrant/reproduce_static_dependency_crash/client/ExternalVariadic.h
+

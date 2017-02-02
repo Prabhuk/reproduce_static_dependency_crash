@@ -123,32 +123,59 @@ client/fast:
 	$(MAKE) -f CMakeFiles/client.dir/build.make CMakeFiles/client.dir/build
 .PHONY : client/fast
 
-main.o: main.cpp.o
+TestVariadic.o: TestVariadic.c.o
+
+.PHONY : TestVariadic.o
+
+# target to build an object file
+TestVariadic.c.o:
+	$(MAKE) -f CMakeFiles/client.dir/build.make CMakeFiles/client.dir/TestVariadic.c.o
+.PHONY : TestVariadic.c.o
+
+TestVariadic.i: TestVariadic.c.i
+
+.PHONY : TestVariadic.i
+
+# target to preprocess a source file
+TestVariadic.c.i:
+	$(MAKE) -f CMakeFiles/client.dir/build.make CMakeFiles/client.dir/TestVariadic.c.i
+.PHONY : TestVariadic.c.i
+
+TestVariadic.s: TestVariadic.c.s
+
+.PHONY : TestVariadic.s
+
+# target to generate assembly for a file
+TestVariadic.c.s:
+	$(MAKE) -f CMakeFiles/client.dir/build.make CMakeFiles/client.dir/TestVariadic.c.s
+.PHONY : TestVariadic.c.s
+
+main.o: main.c.o
 
 .PHONY : main.o
 
 # target to build an object file
-main.cpp.o:
-	$(MAKE) -f CMakeFiles/client.dir/build.make CMakeFiles/client.dir/main.cpp.o
-.PHONY : main.cpp.o
+main.c.o:
+	$(MAKE) -f CMakeFiles/client.dir/build.make CMakeFiles/client.dir/main.c.o
+.PHONY : main.c.o
 
-main.i: main.cpp.i
+main.i: main.c.i
 
 .PHONY : main.i
 
 # target to preprocess a source file
-main.cpp.i:
-	$(MAKE) -f CMakeFiles/client.dir/build.make CMakeFiles/client.dir/main.cpp.i
-.PHONY : main.cpp.i
+main.c.i:
+	$(MAKE) -f CMakeFiles/client.dir/build.make CMakeFiles/client.dir/main.c.i
+.PHONY : main.c.i
 
-main.s: main.cpp.s
+main.s: main.c.s
 
 .PHONY : main.s
 
 # target to generate assembly for a file
-main.cpp.s:
-	$(MAKE) -f CMakeFiles/client.dir/build.make CMakeFiles/client.dir/main.cpp.s
-.PHONY : main.cpp.s
+main.c.s:
+	$(MAKE) -f CMakeFiles/client.dir/build.make CMakeFiles/client.dir/main.c.s
+.PHONY : main.c.s
 
 # Help Target
 help:
@@ -159,6 +186,9 @@ help:
 	@echo "... rebuild_cache"
 	@echo "... edit_cache"
 	@echo "... client"
+	@echo "... TestVariadic.o"
+	@echo "... TestVariadic.i"
+	@echo "... TestVariadic.s"
 	@echo "... main.o"
 	@echo "... main.i"
 	@echo "... main.s"
