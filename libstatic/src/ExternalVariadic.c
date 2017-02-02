@@ -9,7 +9,7 @@
 
 
 // calculates the average of n doubles
-int avg_doubles(int n, ...) {
+int a_avg_doubles(int n, ...) {
     printf("In func: avg_doubles\n");
     double sum = 0;
     va_list list;

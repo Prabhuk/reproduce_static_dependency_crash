@@ -5,7 +5,7 @@
 #ifndef PROJECT_EXTERNALVARIADIC_H
 #define PROJECT_EXTERNALVARIADIC_H
 
-int avg_doubles(int n, ...);
+//int avg_doubles(int n, ...);
 void print_longs(int n, ...);
 void sum_ints_non_variadic(int n, int a, int b, int c);
 
