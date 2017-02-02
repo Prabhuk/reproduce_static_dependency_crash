@@ -35,22 +35,15 @@ struct overflow_bait {
     int (*ptr_to_vararg_func)(int, ...);
 };
 
-int main(int argc, char *argv[]) {
+int main(int argc, char** argv) {
     struct overflow_bait bait;
     bait.ptr_to_vararg_func = (void*)sum_ints;
 
     printf("Stupid vulnerable vararg test program v1.0\n");
 
-    void* address_taken_funcs[5] = {sum_ints, avg_doubles, avg_longs, print_longs, sum_ints_non_variadic};
-    for (int i = 0; i < 5; ++i) {
-        if(i == 0) {
-            printf("These are functions from the same binary \n");
-        }
-        if(i == 2) {
-            printf("These are functions from EXTERNALLY linked binary \n");
-        }
+    void* address_taken_funcs[4] = {sum_ints, avg_doubles, print_longs, sum_ints_non_variadic};
+    for (int i = 0; i < 4; ++i)
         printf("address_taken_funcs[%d] = %p\n", i, address_taken_funcs[i]);
-    }
 
     printf("Hit any key when ready!\n");
     int c = getchar();
@@ -81,6 +74,5 @@ int main(int argc, char *argv[]) {
     printf("Result: %s - %d\n", bait.message, result);
 
     return 0;
-
 }
 

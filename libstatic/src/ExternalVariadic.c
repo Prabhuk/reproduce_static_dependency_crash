@@ -8,15 +8,15 @@
 
 
 
-// calculates the average of n longs
-int avg_longs(int n, ...) {
-    printf("In func: avg_longs\n");
-    long sum = 0;
+// calculates the average of n doubles
+int avg_doubles(int n, ...) {
+    printf("In func: avg_doubles\n");
+    double sum = 0;
     va_list list;
     va_start(list, n);
 
     while (n--)
-        sum += va_arg(list, long);
+        sum += va_arg(list, double);
 
     va_end(list);
     return sum / n;
